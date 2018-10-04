@@ -1,0 +1,151 @@
+#Cobra.OS is owned by Gem1n153103
+#Boot
+import time
+import socket
+hostname = socket.gethostname()    
+IPAddr = socket.gethostbyname(hostname)
+print(" -------Cobra.OS_v0.0.2-------  ")
+time.sleep(0.01)
+print("|                     __      |")      
+time.sleep(0.01)
+print("|       ---_ ...... _/_ \     |")   
+time.sleep(0.01)
+print("|      /  .      ./ .'*\ \    |")    
+time.sleep(0.01)
+print("|      : '         /__-'   \_ |")
+time.sleep(0.01)
+print("|     /                      )|")
+time.sleep(0.01)
+print("|   _/                      ./|")
+time.sleep(0.01)
+print("| /   .   .      _.-*-_ ___.' |")  
+time.sleep(0.01)
+print("| \           __/-  //        |")   
+time.sleep(0.01)
+print("|   \ '--  .-" "/     //         |")    
+time.sleep(0.01)
+print("|    \|  \ |/     //          |")    
+time.sleep(0.01)
+print("|         \|     //           |")
+time.sleep(0.01)
+print("|       /\/__/\_//            |")
+time.sleep(0.01)
+print("|       \_______/             |")
+time.sleep(0.01)
+print("|                             |")
+time.sleep(0.01)
+print(" ----------------------------- ")
+time.sleep(0.5)
+#greeting
+import datetime
+dt = str(datetime.datetime.now())
+print("  " + dt)
+print("      Hello " + hostname)
+loop = 1
+while loop < 2:
+#usr_n is input from user
+  usr_in = input(">")
+#command executioner
+  if usr_in == (""):
+    print()
+#calc
+  elif usr_in == ("calc"): 
+    def add(x, y):
+      return x + y
+
+    def subtract(x, y):
+      return x - y
+
+    def multiply(x, y):
+      return x * y
+
+    def divide(x, y):
+      return x / y
+
+    print("Select operation.")
+    print("1.Add")
+    print("2.Subtract")
+    print("3.Multiply")
+    print("4.Divide")
+ 
+    choice = input("Enter choice(1/2/3/4):")
+
+    num1 = int(input("Enter first number: "))
+    num2 = int(input("Enter second number: "))
+
+    if choice == '1':
+      print(num1,"+",num2,"=", add(num1,num2))
+
+    elif choice == '2':
+      print(num1,"-",num2,"=", subtract(num1,num2))
+
+    elif choice == '3':
+      print(num1,"*",num2,"=", multiply(num1,num2))
+
+    elif choice == '4':
+      print(num1,"/",num2,"=", divide(num1,num2))
+    else:
+      print("Invalid input")
+#cal
+  elif usr_in == ("cal"):
+    import calendar
+    c = calendar.TextCalendar(calendar.MONDAY)
+    dmy = c.formatmonth(2018, 10)
+    print(dmy)
+#datetime
+  elif usr_in == ("date/time"):
+    import datetime
+    dt = datetime.datetime.now()
+    print(dt)
+#quit
+  elif usr_in == ("quit"):
+    loop = 2
+  elif usr_in == ("list_errors"):
+    print("001 uknown command")
+    print("010 work in progress")
+    print("100 internal error")
+#help  
+  elif usr_in == ("help"):
+    print("Here is a list of commands")
+    print("- cal  Displays Calendar.")
+    print("- calc  Runs the calculator program.")
+    print("- cn  Displays you computer name")
+    print("- date/time  Displays current date and time")
+    print("- ip  Displays your current Internet Protocal Address")
+    print("- list_errors  Displays the different errors")
+    print("- ping  Runs ping finder program.")
+    print("  Note: ping will send 100 packets and may take a minute to complete.")
+    print("- pwd  Prints working directory,")
+#pwd	
+  elif usr_in == ("pwd"):
+    print("/home/"+ hostname)
+#ping  
+  elif usr_in == ("ping"):
+      import os
+      print("Please type a URL ex: example.com")
+      hostname = input("")
+      response = os.system("ping -c 100 " + hostname)
+      if response == 0:
+          pingstatus = "Network Active"
+      else:
+          pingstatus = "Network Error"
+#I.P. (Internet Protocal)  
+  elif usr_in == ("ip"):           
+    print("I.P. Address: " + IPAddr)
+#google
+  elif usr_in == ("gsearch"):
+    from gsearch.googlesearch import search
+
+    results = search('___________________')  # returns 10 or less results
+    [ ('Name', 'Link'),
+    ('Name', 'Link'),
+	  ... ]
+
+    results = search(input(), num_results=5)  # returns 20 or less results
+    print(results)
+#computer name
+  elif usr_in == ("cn"):
+    print("Computer Name: " + hostname)
+#error message
+  else:
+    print("<//Cobra:Error_001>("+ usr_in +")")
